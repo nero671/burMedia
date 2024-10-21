@@ -1,0 +1,162 @@
+.popup {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s;
+  background: rgba(20, 22, 24, 0.4);
+
+  &._is-open {
+    opacity: 1;
+    z-index: 99999;
+  }
+
+  &-wrapper {
+    background: #020000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 524px;
+    max-height: 575px;
+
+    @include media(700) {
+      margin: 15px;
+      padding: 20px;
+    }
+  }
+
+  &-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  &-title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  &-close {
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  &-text {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 1.2;
+    color: #111;
+
+    @include media(900) {
+      font-size: 30px;
+    }
+  }
+
+
+  .form-block__form {
+    display: flex;
+  }
+
+  .form-block__controls:last-child .form-control:nth-child(1) .required-star {
+    left: 70px;
+    top: 50%;
+  }
+
+  .form-block__controls:last-child .form-control:nth-child(4) .required-star {
+    left: 120px;
+    top: 27px;
+  }
+
+  .review-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .review-title,
+  .review-text__wrapper {
+    padding: 20px;
+    background: #373737;
+  }
+
+  .review-title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  .review-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #fff;
+    max-height: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal !important;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 10;
+
+    &.show {
+      max-height: 100%;
+      -webkit-line-clamp: initial;
+    }
+  }
+
+  .review-btn {
+    background: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #020000;
+    width: fit-content;
+    margin-top: 40px;
+  }
+
+  .thank-popup__text {
+    padding-bottom: 90px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  &.thank-popup {
+    .popup-wrapper {
+      max-width: 524px;
+      width: 100%;
+    }
+
+  }
+
+
+
+
+
+}
+
+
+

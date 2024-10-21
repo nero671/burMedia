@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/head.html', {
+    'title': 'Главная'
+  })
+  <body>
+    <div class="wrapper">
+      @@include('html/header/header.html', {})
+      <main class="page">
+        <div data-observ></div>
+        @@include('html/intro-section/intro-section.html', {})
+        @@include('html/cases/cases.html', {})
+        @@include('html/about/about.html', {})
+        @@include('html/accordion/accordion.html', {})
+        @@include('html/simple-accordion/simple-accordion.html', {})
+        @@include('html/founders/founders.html', {})
+        @@include('html/brands/brands.html', {})
+        @@include('html/form/form.html', {})
+      </main>
+      @@include('html/footer/footer.html', {})
+      @@include('html/burger-menu/burger-menu.html', {})
+      @@include('html/popups/form-popup.html', {})
+      @@include('html/popups/review-popup.html', {})
+      @@include('html/popups/thank-popup.html', {})
+    </div>
+    @@include('html/script.html', {})
+  </body>
+</html>

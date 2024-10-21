@@ -1,0 +1,140 @@
+.founders {
+  padding: 250px 0 230px;
+
+  &-wrapper {
+    display: flex;
+    position: relative;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 150%;
+      display: block;
+      top: -70px;
+      z-index: -1;
+    }
+
+    &:nth-child(1):before {
+      background-image: url("../images/f-line1.svg");
+      left: -115px;
+    }
+
+    &:nth-child(2) {
+      position: absolute;
+      right: 0;
+      top: 195px;
+
+      &:before {
+        background-image: url("../images/f-line2.svg");
+        right: -87%;
+        top: -27px;
+        z-index: 9;
+      }
+
+      .founders__title {
+        align-self: flex-end;
+        margin-right: 105px;
+      }
+
+      .founders-description {
+        align-items: flex-end;
+      }
+
+      .founders__text {
+        order: -1;
+        max-width: 460px;
+        text-align: right;
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 455px;
+    font-size: 24px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    text-align: right;
+    color: #fff;
+    align-self: flex-start;
+    margin-bottom: 20px;
+    margin-left: 85px;
+  }
+
+  &-description {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+}
+
+@include media(991) {
+  .founders {
+    padding: 150px 0;
+  }
+
+  .founders-wrapper {
+    justify-content: space-between;
+  }
+
+  .founders-item:nth-child(2) {
+    right: 0;
+  }
+}
+
+@include media(700) {
+  .founders-item:nth-child(2) {
+    position: static;
+  }
+
+  .founders-wrapper,
+  .founders-description {
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    z-index: 4;
+  }
+
+  .founders-item:nth-child(1):before {
+    background-size: contain;
+    z-index: 4;
+  }
+
+  .founders-item:nth-child(2) .founders__title {
+    margin-right: 0;
+  }
+
+  .founders-item:nth-child(2):before {
+    background-size: contain;
+    right: -53%;
+    top: 50%;
+    height: 300px;
+    z-index: 4;
+  }
+
+  .founders__title {
+    margin-left: 0;
+  }
+
+  .founders__text {
+    order: -1;
+  }
+
+  .founders-item:nth-child(1) .founders__text {
+      font-size: 24px;
+  }
+}

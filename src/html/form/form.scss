@@ -1,0 +1,144 @@
+.form {
+  padding: 90px 0;
+
+  &__title {
+    margin-bottom: 40px;
+    font-size: 36px;
+  }
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-block__form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.form-block__controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-block__btn {
+  padding: 20px 36px !important;
+}
+
+.form-control {
+  position: relative;
+  input,
+  textarea {
+    width: 100%;
+    padding: 20px;
+    background: #373737;
+    border: none;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #999;
+
+    &:focus,&:active {
+      .required-star {
+        display: none;
+      }
+    }
+
+
+    &::placeholder {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: #999;
+    }
+  }
+
+  textarea {
+    resize: none;
+    height: 110px;
+    width: 100%;
+  }
+
+  input {
+    height: 50px;
+  }
+
+  .required-star {
+    color: yellow;
+    font-weight: bold;
+    position: absolute;
+    left: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+
+    &.hidden {
+      visibility: hidden;
+    }
+  }
+}
+
+.rol {
+  position: relative;
+
+  &:after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    display: block;
+    background: url('data:image/svg+xml,<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.19249e-07 10L10 0L10 10L1.19249e-07 10Z" fill="%23999999"/></svg>');
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+.form-block__controls:first-child .form-control:nth-child(3) .required-star {
+  left: 70px;
+}
+
+.form-block__controls:last-child .form-control:nth-child(1) .required-star {
+  left: 120px;
+  top: 27px;
+}
+
+.form-check {
+  margin-top: 10px;
+
+  span {
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+}
+
+.form-block__btn {
+  width: fit-content;
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+.form-popup__content .form-block__btn {
+  margin-top: 20px;
+}
+
+@include media(700) {
+  .form {
+    padding: 30px 0;
+  }
+
+  .form-block__form {
+    display: flex;
+    flex-direction: column;
+  }
+}

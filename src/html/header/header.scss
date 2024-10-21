@@ -1,0 +1,135 @@
+// =====================================================================================================================
+.header {
+  width: 100%;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+  padding: 14px 0;
+
+  &.active {
+    backdrop-filter: blur(10px);
+  }
+
+
+  &.sticky {
+    // ..стили для липкого хедера
+  }
+
+  // .header__container
+  &__container {
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu {
+    margin-left: auto;
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      li {
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+        color: #fff;
+
+        a {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &-languages {
+    margin-left: 233px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    &__item {
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+      color: #fff;
+      cursor: pointer;
+
+
+      &.active {
+        border-bottom: 1px solid #fff;
+      }
+    }
+  }
+}
+// =====================================================================================================================
+
+// Burger
+
+.icon-menu {
+  display: none;
+  background: transparent;
+  margin-left: auto;
+
+  @include media(700) {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 5;
+
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 300ms ease 0ms;
+      right: 0;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    span {
+      top: calc(50% - 1px);
+    }
+
+    .menu-open & {
+      span {
+        width: 0;
+      }
+
+      &::before {
+        top: calc(50% - 1px);
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        bottom: calc(50% - 1px);
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+@include media(700) {
+  .header__menu,
+  .header-languages {
+    display: none;
+  }
+}
+

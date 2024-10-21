@@ -1,0 +1,32 @@
+<header class="header" data-lp>
+  <div class="header__container">
+    <a href="#" class="header__logo logo">
+      <img src="images/logo.svg" alt="Logo">
+    </a>
+    <nav class="header__menu menu">
+      <ul class="menu__list">
+        <li class="menu__item"><a href="#about-us" class="menu__link" target="_blank">about</a></li>
+        <li class="menu__item"><a href="#services" class="menu__link" target="_blank">services</a></li>
+        <li class="menu__item js-dropdown">
+          legal
+
+          <div class="js-dropdown__option">
+            <a href="#" download>
+              Privacy Policy
+            </a>
+
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="header-languages">
+        <div class="header-languages__item active">
+            ENG
+        </div>
+      <div class="header-languages__item">
+            DE
+        </div>
+    </div>
+    @@include('./iconMenu.html', {})
+  </div>
+</header>
